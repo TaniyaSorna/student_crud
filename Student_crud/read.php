@@ -8,6 +8,10 @@ if (isset($_GET['delete_id'])) {
     mysqli_query($con, $delete_sql);
     header('location: read.php');
 }
+if (isset($_GET['edit_id'])) {
+    $id = $_GET['edit_id'];
+    header("location: edit.php?edit_id=$id");
+}
 
 ?>
 
@@ -30,11 +34,13 @@ if (isset($_GET['delete_id'])) {
             echo '<td>' . $row['age'] . '</td>';
             echo '<td>' . $row['address'] . '</td>';
             echo '<td>
-                <a herf="?edit_id=' . $row['id'] . '">Edit</a>
-                <a herf="?delete_id=' . $row['id'] . '">Delete</a>
+                <a href="?edit_id=' . $row['id'] . '">Edit</a>
+                <a href="?delete_id=' . $row['id'] . '">Delete</a>
             </td>';
             echo '</tr>';
         }
         ?>
     </tbody>
-</table
+</table>
+
+<a href="./index.php">Create</a>

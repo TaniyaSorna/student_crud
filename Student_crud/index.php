@@ -24,3 +24,5 @@ if (isset($_POST['submit'])) {
     <input type="text" name="address"><br><br>
     <input type="submit" value="Submit" name="submit">
 </form>
+
+<a href="./read.php">Show Data</a>
